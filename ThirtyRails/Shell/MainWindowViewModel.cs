@@ -1,7 +1,7 @@
 using System.ComponentModel.Composition;
 using Caliburn.Micro;
 
-namespace ThirtyRails
+namespace ThirtyRails.Shell
 {
     [Export(typeof(IMainWindowViewModel))]
     public class MainWindowViewModel : Screen, IMainWindowViewModel

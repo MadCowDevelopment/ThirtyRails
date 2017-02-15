@@ -1,4 +1,4 @@
-﻿namespace ThirtyRails
+﻿namespace ThirtyRails.Shell
 {
     /// <summary>
     /// Interaction logic for MainWindowView.xaml

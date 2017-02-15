@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using Caliburn.Micro;
 
-namespace ThirtyRails
+namespace ThirtyRails.Shell
 {
     public class DebugLogger : ILog
     {

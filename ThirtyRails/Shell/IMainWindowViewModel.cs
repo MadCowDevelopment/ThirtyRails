@@ -1,6 +1,6 @@
 using Caliburn.Micro;
 
-namespace ThirtyRails
+namespace ThirtyRails.Shell
 {
     public interface IMainWindowViewModel : IScreen
     {

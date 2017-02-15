@@ -7,7 +7,7 @@ using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
 
-namespace ThirtyRails
+namespace ThirtyRails.Shell
 {
     public class MefBootstrapper : BootstrapperBase
     {

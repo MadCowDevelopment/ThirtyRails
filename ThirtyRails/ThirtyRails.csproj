@@ -78,7 +78,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindowView.xaml">
+    <Page Include="Shell\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -86,16 +86,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DebugLogger.cs" />
-    <Compile Include="IMainWindowViewModel.cs" />
-    <Compile Include="MainWindowView.xaml.cs">
+    <Compile Include="Shell\DebugLogger.cs" />
+    <Compile Include="Shell\IMainWindowViewModel.cs" />
+    <Compile Include="Shell\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindowViewModel.cs" />
-    <Compile Include="MefBootstrapper.cs" />
+    <Compile Include="Shell\MainWindowViewModel.cs" />
+    <Compile Include="Shell\MefBootstrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
