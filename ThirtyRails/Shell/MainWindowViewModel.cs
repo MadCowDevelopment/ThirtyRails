@@ -19,8 +19,15 @@ namespace ThirtyRails.Shell
 
             MainContent = _mainMenuViewModel;
         }
+
         public override string DisplayName { get; set; } = "30 Rails";
 
         public IViewModel MainContent { get; set; }
+
+        protected override void OnInitialize()
+        {
+            base.OnInitialize();
+            _mainMenuViewModel.StartGame();
+        }
     }
 }

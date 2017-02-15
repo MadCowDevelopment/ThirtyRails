@@ -2,12 +2,16 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:ThirtyRails"
-             xmlns:shell="clr-namespace:ThirtyRails.Shell">
+             xmlns:shell="clr-namespace:ThirtyRails.Shell"
+             xmlns:converters="clr-namespace:ThirtyRails.Converters">
   <Application.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary>
           <shell:MefBootstrapper x:Key="bootstrapper" />
+        </ResourceDictionary>
+        <ResourceDictionary>
+          <converters:DoubleMultiplierConverter x:Key="DoubleMultiplierConverter"/>
         </ResourceDictionary>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>

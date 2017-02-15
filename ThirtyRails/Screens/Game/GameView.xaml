@@ -9,12 +9,12 @@
              d:DesignHeight="500" d:DesignWidth="300">
   <Grid>
     <StackPanel>
-      <controls:Die Pips="1" Height="32" Width="32"/>
-      <controls:Die Pips="2"/>
-      <controls:Die Pips="3"/>
-      <controls:Die Pips="4"/>
-      <controls:Die Pips="5"/>
-      <controls:Die Pips="6" Height="128" Width="128"/>
+      <controls:Die Pips="1"/>
+      <controls:Die Pips="2" Height="48" Width="48" DieColor="Aqua"/>
+      <controls:Die Pips="3" Height="64" Width="64" DieColor="DarkSlateGray" PipColor="Gray"/>
+      <controls:Die Pips="4" Height="48" Width="48" DieColor="DarkRed" PipColor="Aqua"/>
+      <controls:Die Pips="5" DieColor="LightGreen"/>
+      <controls:Die Pips="6" Height="96" Width="96" DieColor="Azure"/>
     </StackPanel>
 
   </Grid>

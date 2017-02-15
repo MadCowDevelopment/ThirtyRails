@@ -22,8 +22,32 @@ namespace ThirtyRails.Controls
             DrawPips();
         }
 
+        public static readonly DependencyProperty PipColorProperty = DependencyProperty.Register(
+            "PipColor", typeof(Brush), typeof(Die), new PropertyMetadata(Brushes.Black, PropertyChangedCallback));
+
+        public Brush PipColor
+        {
+            get { return (Brush)GetValue(PipColorProperty); }
+            set { SetValue(PipColorProperty, value); }
+        }
+
+        public static readonly DependencyProperty DieColorProperty = DependencyProperty.Register(
+            "DieColor", typeof(Brush), typeof(Die), new PropertyMetadata(Brushes.WhiteSmoke, PropertyChangedCallback));
+
+        public Brush DieColor
+        {
+            get { return (Brush)GetValue(DieColorProperty); }
+            set { SetValue(DieColorProperty, value); }
+        }
+
         public static readonly DependencyProperty PipsProperty = DependencyProperty.Register(
             "Pips", typeof(int), typeof(Die), new PropertyMetadata(1, PropertyChangedCallback));
+
+        public int Pips
+        {
+            get { return (int)GetValue(PipsProperty); }
+            set { SetValue(PipsProperty, value); }
+        }
 
         private static void PropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
         {
@@ -63,21 +87,15 @@ namespace ThirtyRails.Controls
             }
         }
 
-        private static UIElement CreatePip(double diameter, double x, double y)
+        private UIElement CreatePip(double diameter, double x, double y)
         {
             var pip = new Ellipse();
-            pip.Fill = Brushes.Black;
+            pip.Fill = PipColor;
             pip.Width = diameter;
             pip.Height = diameter;
             Canvas.SetLeft(pip, x - diameter / 2);
             Canvas.SetTop(pip, y - diameter / 2);
             return pip;
-        }
-
-        public int Pips
-        {
-            get { return (int) GetValue(PipsProperty); }
-            set { SetValue(PipsProperty, value); }
         }
     }
 }
