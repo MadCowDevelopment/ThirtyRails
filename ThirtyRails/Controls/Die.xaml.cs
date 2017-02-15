@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using ThirtyRails.Utils;
 
 namespace ThirtyRails.Controls
 {
@@ -63,7 +64,7 @@ namespace ThirtyRails.Controls
             var diameter = Width * 0.2;
 
             _canvas.Children.Clear();
-            if (Pips == 1 || Pips == 3 || Pips == 5)
+            if (Pips.In(1, 3, 5))
             {
                 _canvas.Children.Add(CreatePip(diameter, totalWidth / 2, totalHeight / 2));
             }
@@ -74,7 +75,7 @@ namespace ThirtyRails.Controls
                 _canvas.Children.Add(CreatePip(diameter, totalWidth / 4, totalHeight / 4 * 3));
             }
 
-            if (Pips == 4 || Pips == 5 || Pips == 6)
+            if (Pips.In(4, 5, 6))
             {
                 _canvas.Children.Add(CreatePip(diameter, totalWidth / 4, totalHeight / 4));
                 _canvas.Children.Add(CreatePip(diameter, totalWidth / 4 * 3, totalHeight / 4 * 3));

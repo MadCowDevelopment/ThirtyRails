@@ -10,9 +10,17 @@
   <Grid>
     <StackPanel>
       <controls:Die Pips="1"/>
-      <controls:Die Pips="2" Height="48" Width="48" DieColor="Aqua"/>
+      <controls:Die Pips="2" Height="48" Width="48" DieColor="DarkViolet"/>
       <controls:Die Pips="3" Height="64" Width="64" DieColor="DarkSlateGray" PipColor="Gray"/>
-      <controls:Die Pips="4" Height="48" Width="48" DieColor="DarkRed" PipColor="Aqua"/>
+      <controls:Die Pips="4" Height="48" Width="48" DieColor="WhiteSmoke">
+        <controls:Die.PipColor>
+          <RadialGradientBrush GradientOrigin="0.5,0.5">
+            <GradientStop Color="Blue" Offset="0.0" />
+            <GradientStop Color="BlueViolet" Offset="0.5" />
+            <GradientStop Color="Black" Offset="1.0" />
+          </RadialGradientBrush>
+        </controls:Die.PipColor>
+      </controls:Die>
       <controls:Die Pips="5" DieColor="LightGreen"/>
       <controls:Die Pips="6" Height="96" Width="96" DieColor="Azure"/>
     </StackPanel>
