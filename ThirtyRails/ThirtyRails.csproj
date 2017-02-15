@@ -78,7 +78,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\Die.xaml.cs">
+      <DependentUpon>Die.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shell\ViewModel.cs" />
+    <Page Include="Controls\Die.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Screens\Game\GameView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
