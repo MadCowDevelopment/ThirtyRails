@@ -78,6 +78,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Shell\ViewModel.cs" />
+    <Page Include="Screens\Game\GameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\MainMenu\MainMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Shell\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,8 +95,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Screens\Game\GameView.xaml.cs">
+      <DependentUpon>GameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Game\GameViewModel.cs" />
+    <Compile Include="Screens\MainMenu\MainMenuView.xaml.cs">
+      <DependentUpon>MainMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainMenu\MainMenuViewModel.cs" />
+    <Compile Include="Services\INavigationService.cs" />
+    <Compile Include="Services\IMefContainer.cs" />
+    <Compile Include="Services\MefContainer.cs" />
+    <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Shell\DebugLogger.cs" />
-    <Compile Include="Shell\IMainWindowViewModel.cs" />
+    <Compile Include="Shell\IViewModel.cs" />
     <Compile Include="Shell\MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>

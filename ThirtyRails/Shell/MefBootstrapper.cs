@@ -6,12 +6,13 @@ using System.ComponentModel.Composition.Primitives;
 using System.Linq;
 using System.Windows;
 using Caliburn.Micro;
+using ThirtyRails.Services;
 
 namespace ThirtyRails.Shell
 {
     public class MefBootstrapper : BootstrapperBase
     {
-        private CompositionContainer _container;
+        private IMefContainer _container;
 
         static MefBootstrapper()
         {
@@ -25,10 +26,7 @@ namespace ThirtyRails.Shell
 
         protected override void Configure()
         {
-            _container =
-                new CompositionContainer(
-                    new AggregateCatalog(
-                        AssemblySource.Instance.Select(x => new AssemblyCatalog(x)).OfType<ComposablePartCatalog>()));
+            _container = new MefContainer();
 
             var batch = new CompositionBatch();
 
@@ -42,12 +40,8 @@ namespace ThirtyRails.Shell
         protected override object GetInstance(Type serviceType, string key)
         {
             string contract = string.IsNullOrEmpty(key) ? AttributedModelServices.GetContractName(serviceType) : key;
-            var exports = _container.GetExportedValues<object>(contract);
 
-            if (exports.Any())
-                return exports.First();
-
-            throw new Exception(string.Format("Could not locate any instances of contract {0}.", contract));
+            return _container.GetExportedValue<object>(contract);
         }
 
         protected override IEnumerable<object> GetAllInstances(Type serviceType)
@@ -62,7 +56,7 @@ namespace ThirtyRails.Shell
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            DisplayRootViewFor<IMainWindowViewModel>();
+            DisplayRootViewFor<MainWindowViewModel>();
         }
     }
 }
