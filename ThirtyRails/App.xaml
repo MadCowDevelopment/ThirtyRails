@@ -12,6 +12,7 @@
         </ResourceDictionary>
         <ResourceDictionary>
           <converters:DoubleMultiplierConverter x:Key="DoubleMultiplierConverter"/>
+          <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
         </ResourceDictionary>
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>

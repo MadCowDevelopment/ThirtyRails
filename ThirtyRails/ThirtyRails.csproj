@@ -91,6 +91,8 @@
       <DependentUpon>GameBoardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Screens\Game\GameBoard\GameBoardViewModel.cs" />
+    <Compile Include="Services\RNG.cs" />
+    <Compile Include="Utils\ListExtensions.cs" />
     <Compile Include="Utils\ObjectExtensions.cs" />
     <Compile Include="Converters\DoubleMultiplierConverter.cs" />
     <Compile Include="Shell\ViewModel.cs" />
@@ -177,6 +179,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mountain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\main.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.1.29.2\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.2\build\dotnet\Fody.targets')" />

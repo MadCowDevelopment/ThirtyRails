@@ -10,7 +10,19 @@
     <Button>
       <Button.Template>
         <ControlTemplate>
-          <Border Background="LightCyan"/>
+          <Border>
+            <Border.Style>
+              <Style TargetType="Border">
+                <Setter Property="Background" Value="WhiteSmoke"/>
+                <Style.Triggers>
+                  <DataTrigger Binding="{Binding IsValidTarget}" Value="True">
+                    <Setter Property="Background" Value="LightGreen"/>
+                  </DataTrigger>
+                </Style.Triggers>
+              </Style>
+            </Border.Style>
+            <Image Source="../Images/mountain.png" Visibility="{Binding IsMountain, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+          </Border>
         </ControlTemplate>
       </Button.Template>
     </Button>

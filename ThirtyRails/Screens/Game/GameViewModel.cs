@@ -18,6 +18,7 @@ namespace ThirtyRails.Screens.Game
 
         public void Initialize()
         {
+            GameBoard.Initialize();
         }
     }
 }

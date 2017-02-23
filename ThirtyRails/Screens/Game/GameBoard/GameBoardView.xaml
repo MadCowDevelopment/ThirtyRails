@@ -87,47 +87,19 @@
     <controls:Station Grid.Row="5" Grid.Column="8" />
     <controls:Station Grid.Row="6" Grid.Column="8" />
     <controls:Station Grid.Row="7" Grid.Column="8" />
-    
-    <controls:Tile Grid.Row="2" Grid.Column="2"/>
-    <controls:Tile Grid.Row="2" Grid.Column="3"/>
-    <controls:Tile Grid.Row="2" Grid.Column="4"/>
-    <controls:Tile Grid.Row="2" Grid.Column="5"/>
-    <controls:Tile Grid.Row="2" Grid.Column="6"/>
-    <controls:Tile Grid.Row="2" Grid.Column="7"/>
-    
-    <controls:Tile Grid.Row="3" Grid.Column="2"/>
-    <controls:Tile Grid.Row="3" Grid.Column="3"/>
-    <controls:Tile Grid.Row="3" Grid.Column="4"/>
-    <controls:Tile Grid.Row="3" Grid.Column="5"/>
-    <controls:Tile Grid.Row="3" Grid.Column="6"/>
-    <controls:Tile Grid.Row="3" Grid.Column="7"/>
 
-    <controls:Tile Grid.Row="4" Grid.Column="2"/>
-    <controls:Tile Grid.Row="4" Grid.Column="3"/>
-    <controls:Tile Grid.Row="4" Grid.Column="4"/>
-    <controls:Tile Grid.Row="4" Grid.Column="5"/>
-    <controls:Tile Grid.Row="4" Grid.Column="6"/>
-    <controls:Tile Grid.Row="4" Grid.Column="7"/>
-
-    <controls:Tile Grid.Row="5" Grid.Column="2"/>
-    <controls:Tile Grid.Row="5" Grid.Column="3"/>
-    <controls:Tile Grid.Row="5" Grid.Column="4"/>
-    <controls:Tile Grid.Row="5" Grid.Column="5"/>
-    <controls:Tile Grid.Row="5" Grid.Column="6"/>
-    <controls:Tile Grid.Row="5" Grid.Column="7"/>
-
-    <controls:Tile Grid.Row="6" Grid.Column="2"/>
-    <controls:Tile Grid.Row="6" Grid.Column="3"/>
-    <controls:Tile Grid.Row="6" Grid.Column="4"/>
-    <controls:Tile Grid.Row="6" Grid.Column="5"/>
-    <controls:Tile Grid.Row="6" Grid.Column="6"/>
-    <controls:Tile Grid.Row="6" Grid.Column="7"/>
-
-    <controls:Tile Grid.Row="7" Grid.Column="2"/>
-    <controls:Tile Grid.Row="7" Grid.Column="3"/>
-    <controls:Tile Grid.Row="7" Grid.Column="4"/>
-    <controls:Tile Grid.Row="7" Grid.Column="5"/>
-    <controls:Tile Grid.Row="7" Grid.Column="6"/>
-    <controls:Tile Grid.Row="7" Grid.Column="7"/>
+    <ItemsControl Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="6"
+                  ItemsSource="{Binding Tiles}">
+      <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate>
+          <UniformGrid Columns="6" Rows="6"/>
+        </ItemsPanelTemplate>
+      </ItemsControl.ItemsPanel>
+      <ItemsControl.ItemTemplate>
+        <DataTemplate>
+          <controls:Tile/>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
   </Grid>
 </UserControl>
