@@ -81,10 +81,32 @@
     <Compile Include="Controls\Die.xaml.cs">
       <DependentUpon>Die.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Station.xaml.cs">
+      <DependentUpon>Station.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tile.xaml.cs">
+      <DependentUpon>Tile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Game\GameBoard\GameBoardView.xaml.cs">
+      <DependentUpon>GameBoardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Game\GameBoard\GameBoardViewModel.cs" />
     <Compile Include="Utils\ObjectExtensions.cs" />
     <Compile Include="Converters\DoubleMultiplierConverter.cs" />
     <Compile Include="Shell\ViewModel.cs" />
     <Page Include="Controls\Die.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Station.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Tile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\Game\GameBoard\GameBoardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="ThirtyRails.Screens.Game.GameBoard.GameBoardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:ThirtyRails.Controls"
+             mc:Ignorable="d"
+             Width="320" Height="320"
+             d:DesignHeight="600" d:DesignWidth="600">
+  <Grid ShowGridLines="False">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="0" Grid.Column="2" Pips="1"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="0" Grid.Column="3" Pips="2"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="0" Grid.Column="4" Pips="3"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="0" Grid.Column="5" Pips="4"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="0" Grid.Column="6" Pips="5"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="0" Grid.Column="7" Pips="6"/>
+
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="9" Grid.Column="2" Pips="1"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="9" Grid.Column="3" Pips="2"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="9" Grid.Column="4" Pips="3"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="9" Grid.Column="5" Pips="4"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="9" Grid.Column="6" Pips="5"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="9" Grid.Column="7" Pips="6"/>
+
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="2" Grid.Column="0" Pips="1"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="3" Grid.Column="0" Pips="2"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="4" Grid.Column="0" Pips="3"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="5" Grid.Column="0" Pips="4"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="6" Grid.Column="0" Pips="5"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="7" Grid.Column="0" Pips="6"/>
+    
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="2" Grid.Column="9" Pips="1"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="3" Grid.Column="9" Pips="2"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="4" Grid.Column="9" Pips="3"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="5" Grid.Column="9" Pips="4"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="6" Grid.Column="9" Pips="5"/>
+    <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="7" Grid.Column="9" Pips="6"/>
+
+    <controls:Station Grid.Row="1" Grid.Column="2" />
+    <controls:Station Grid.Row="1" Grid.Column="3" />
+    <controls:Station Grid.Row="1" Grid.Column="4" />
+    <controls:Station Grid.Row="1" Grid.Column="5" />
+    <controls:Station Grid.Row="1" Grid.Column="6" />
+    <controls:Station Grid.Row="1" Grid.Column="7" />
+
+    <controls:Station Grid.Row="8" Grid.Column="2" />
+    <controls:Station Grid.Row="8" Grid.Column="3" />
+    <controls:Station Grid.Row="8" Grid.Column="4" />
+    <controls:Station Grid.Row="8" Grid.Column="5" />
+    <controls:Station Grid.Row="8" Grid.Column="6" />
+    <controls:Station Grid.Row="8" Grid.Column="7" />
+
+    <controls:Station Grid.Row="2" Grid.Column="1" />
+    <controls:Station Grid.Row="3" Grid.Column="1" />
+    <controls:Station Grid.Row="4" Grid.Column="1" />
+    <controls:Station Grid.Row="5" Grid.Column="1" />
+    <controls:Station Grid.Row="6" Grid.Column="1" />
+    <controls:Station Grid.Row="7" Grid.Column="1" />
+
+    <controls:Station Grid.Row="2" Grid.Column="8" />
+    <controls:Station Grid.Row="3" Grid.Column="8" />
+    <controls:Station Grid.Row="4" Grid.Column="8" />
+    <controls:Station Grid.Row="5" Grid.Column="8" />
+    <controls:Station Grid.Row="6" Grid.Column="8" />
+    <controls:Station Grid.Row="7" Grid.Column="8" />
+    
+    <controls:Tile Grid.Row="2" Grid.Column="2"/>
+    <controls:Tile Grid.Row="2" Grid.Column="3"/>
+    <controls:Tile Grid.Row="2" Grid.Column="4"/>
+    <controls:Tile Grid.Row="2" Grid.Column="5"/>
+    <controls:Tile Grid.Row="2" Grid.Column="6"/>
+    <controls:Tile Grid.Row="2" Grid.Column="7"/>
+    
+    <controls:Tile Grid.Row="3" Grid.Column="2"/>
+    <controls:Tile Grid.Row="3" Grid.Column="3"/>
+    <controls:Tile Grid.Row="3" Grid.Column="4"/>
+    <controls:Tile Grid.Row="3" Grid.Column="5"/>
+    <controls:Tile Grid.Row="3" Grid.Column="6"/>
+    <controls:Tile Grid.Row="3" Grid.Column="7"/>
+
+    <controls:Tile Grid.Row="4" Grid.Column="2"/>
+    <controls:Tile Grid.Row="4" Grid.Column="3"/>
+    <controls:Tile Grid.Row="4" Grid.Column="4"/>
+    <controls:Tile Grid.Row="4" Grid.Column="5"/>
+    <controls:Tile Grid.Row="4" Grid.Column="6"/>
+    <controls:Tile Grid.Row="4" Grid.Column="7"/>
+
+    <controls:Tile Grid.Row="5" Grid.Column="2"/>
+    <controls:Tile Grid.Row="5" Grid.Column="3"/>
+    <controls:Tile Grid.Row="5" Grid.Column="4"/>
+    <controls:Tile Grid.Row="5" Grid.Column="5"/>
+    <controls:Tile Grid.Row="5" Grid.Column="6"/>
+    <controls:Tile Grid.Row="5" Grid.Column="7"/>
+
+    <controls:Tile Grid.Row="6" Grid.Column="2"/>
+    <controls:Tile Grid.Row="6" Grid.Column="3"/>
+    <controls:Tile Grid.Row="6" Grid.Column="4"/>
+    <controls:Tile Grid.Row="6" Grid.Column="5"/>
+    <controls:Tile Grid.Row="6" Grid.Column="6"/>
+    <controls:Tile Grid.Row="6" Grid.Column="7"/>
+
+    <controls:Tile Grid.Row="7" Grid.Column="2"/>
+    <controls:Tile Grid.Row="7" Grid.Column="3"/>
+    <controls:Tile Grid.Row="7" Grid.Column="4"/>
+    <controls:Tile Grid.Row="7" Grid.Column="5"/>
+    <controls:Tile Grid.Row="7" Grid.Column="6"/>
+    <controls:Tile Grid.Row="7" Grid.Column="7"/>
+  </Grid>
+</UserControl>
