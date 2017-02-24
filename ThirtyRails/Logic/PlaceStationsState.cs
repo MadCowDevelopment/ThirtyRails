@@ -6,7 +6,7 @@ namespace ThirtyRails.Logic
     {
         public PlaceStationsState(IHasState state, Map map) : base(state, map)
         {
-            Map.BorderTiles.ForEach(p =>
+            Map.StationTiles.ForEach(p =>
             {
                 p.CanHighlight = true;
                 p.IsValidTarget = true;

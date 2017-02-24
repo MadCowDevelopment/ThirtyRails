@@ -63,9 +63,15 @@
 
     <ItemsControl Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="8" ItemsSource="{Binding Tiles}">
       <ItemsControl.Resources>
-
         <DataTemplate DataType="{x:Type logic:BorderTile}">
           <controls:TileControl Background="LightGray"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type logic:StationTile}">
+          <controls:TileControl Background="LightGray">
+            <Grid>
+              <Image Source="pack://application:,,,/ThirtyRails;component/Images/station.png" Visibility="{Binding IsStation, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+          </controls:TileControl>
         </DataTemplate>
         <DataTemplate DataType="{x:Type logic:CenterTile}">
           <controls:TileControl Background="WhiteSmoke">

@@ -15,21 +15,25 @@ namespace ThirtyRails.Logic
             _tiles = new List<Tile>();
 
             int id;
-            for (id = 0; id < 8; id++)
+            _tiles.Add(new BorderTile(0));
+            for (id = 1; id < 7; id++)
             {
-                _tiles.Add(new BorderTile(id));
+                _tiles.Add(new StationTile(id));
             }
-            
+            _tiles.Add(new BorderTile(7));
+
             for (id = 8; id < 56; id++)
             {
-                if (id % 8 == 0 || id % 8 == 7) _tiles.Add(new BorderTile(id));
+                if (id % 8 == 0 || id % 8 == 7) _tiles.Add(new StationTile(id));
                 else _tiles.Add(new CenterTile(id));
             }
 
-            for (id = 56; id < 64; id++)
+            _tiles.Add(new BorderTile(56));
+            for (id = 57; id < 63; id++)
             {
-                _tiles.Add(new BorderTile(id));
+                _tiles.Add(new StationTile(id));
             }
+            _tiles.Add(new BorderTile(63));
 
             for (var y = 0; y < 6; y++)
             {
@@ -41,7 +45,7 @@ namespace ThirtyRails.Logic
         public IEnumerable<Tile> Tiles => _tiles;
 
         public IEnumerable<CenterTile> CenterTiles => _tiles.OfType<CenterTile>();
-        public IEnumerable<BorderTile> BorderTiles => _tiles.OfType<BorderTile>();
+        public IEnumerable<StationTile> StationTiles => _tiles.OfType<StationTile>();
 
         public List<Tile> GetAdjacentTiles(Tile tile)
         {
@@ -64,7 +68,7 @@ namespace ThirtyRails.Logic
             return _tiles.IndexOf(tile);
         }
 
-        public CenterTile GetCenterTile(int x, int y)
+        private CenterTile GetCenterTile(int x, int y)
         {
             return GetTile(x + 1, y + 1) as CenterTile;
         }
