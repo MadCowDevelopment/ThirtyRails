@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:controls="clr-namespace:ThirtyRails.Controls"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:gameBoard="clr-namespace:ThirtyRails.Screens.Game.GameBoard"
              mc:Ignorable="d"
              Width="320" Height="320"
              d:DesignHeight="600" d:DesignWidth="600">
@@ -52,7 +54,7 @@
     <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="5" Grid.Column="0" Pips="4"/>
     <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="6" Grid.Column="0" Pips="5"/>
     <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="7" Grid.Column="0" Pips="6"/>
-    
+
     <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="2" Grid.Column="9" Pips="1"/>
     <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="3" Grid.Column="9" Pips="2"/>
     <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="4" Grid.Column="9" Pips="3"/>
@@ -88,16 +90,49 @@
     <controls:Station Grid.Row="6" Grid.Column="8" />
     <controls:Station Grid.Row="7" Grid.Column="8" />
 
-    <ItemsControl Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="6"
-                  ItemsSource="{Binding Tiles}">
+    <ItemsControl Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="6" ItemsSource="{Binding Tiles}">
       <ItemsControl.ItemsPanel>
         <ItemsPanelTemplate>
           <UniformGrid Columns="6" Rows="6"/>
         </ItemsPanelTemplate>
       </ItemsControl.ItemsPanel>
       <ItemsControl.ItemTemplate>
-        <DataTemplate>
-          <controls:Tile/>
+        <DataTemplate DataType="{x:Type gameBoard:Tile}">
+          <Button FocusVisualStyle="{x:Null}" Focusable="False"
+                  cal:Message.Attach="[Event Click] = [Action OnTileClick($dataContext)];[Event MouseEnter] = [Action OnTileEnter($dataContext)];[Event MouseLeave] = [Action OnTileLeave($dataContext)]">
+            <Button.Template>
+              <ControlTemplate>
+                <Border>
+                  <Border.Style>
+                    <Style TargetType="Border">
+                      <Setter Property="Background" Value="WhiteSmoke"/>
+                      <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsValidTarget}" Value="True">
+                          <Setter Property="Background" Value="LightGreen"/>
+                        </DataTrigger>
+                      </Style.Triggers>
+                    </Style>
+                  </Border.Style>
+                  <Grid Opacity="1">
+                    <Border Opacity="0.8" x:Name="MouseOverlay">
+                      <Border.Style>
+                        <Style TargetType="Border">
+                          <Setter Property="Background" Value="Transparent"/>
+                          <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMouseOver}" Value="True">
+                              <Setter Property="Background" Value="White"/>
+                            </DataTrigger>
+                          </Style.Triggers>
+                        </Style>
+                      </Border.Style>
+                    </Border>
+                    <Image Source="pack://application:,,,/ThirtyRails;component/Images/mountain.png" Visibility="{Binding IsMountain, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <Image Source="pack://application:,,,/ThirtyRails;component/Images/mine.png" Visibility="{Binding IsMine, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                  </Grid>
+                </Border>
+              </ControlTemplate>
+            </Button.Template>
+          </Button>
         </DataTemplate>
       </ItemsControl.ItemTemplate>
     </ItemsControl>
