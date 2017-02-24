@@ -69,6 +69,7 @@
         <DataTemplate DataType="{x:Type logic:StationTile}">
           <controls:TileControl Background="LightGray">
             <Grid>
+              <Image Source="pack://application:,,,/ThirtyRails;component/Images/station.png" Visibility="{Binding PreviewStation, Converter={StaticResource BooleanToVisibilityConverter}}"/>
               <Image Source="pack://application:,,,/ThirtyRails;component/Images/station.png" Visibility="{Binding IsStation, Converter={StaticResource BooleanToVisibilityConverter}}"/>
             </Grid>
           </controls:TileControl>

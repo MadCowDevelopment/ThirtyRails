@@ -86,6 +86,7 @@
     </Compile>
     <Compile Include="Logic\BorderTile.cs" />
     <Compile Include="Logic\IGameState.cs" />
+    <Compile Include="Logic\StationTile.cs" />
     <Compile Include="Screens\Game\GameBoard\GameBoardView.xaml.cs">
       <DependentUpon>GameBoardView.xaml</DependentUpon>
     </Compile>

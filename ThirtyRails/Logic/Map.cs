@@ -72,5 +72,15 @@ namespace ThirtyRails.Logic
         {
             return GetTile(x + 1, y + 1) as CenterTile;
         }
+
+        public IEnumerable<Tile> GetTilesInRow(int y)
+        {
+            return Tiles.Where(p => p.Y == y);
+        }
+
+        public IEnumerable<Tile> GetTilesInColumn(int x)
+        {
+            return Tiles.Where(p => p.X == x);
+        }
     }
 }
