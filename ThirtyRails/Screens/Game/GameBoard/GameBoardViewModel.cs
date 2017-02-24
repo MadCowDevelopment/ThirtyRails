@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using ThirtyRails.Logic;
 using ThirtyRails.Shell;
 
 namespace ThirtyRails.Screens.Game.GameBoard

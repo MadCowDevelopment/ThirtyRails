@@ -1,9 +1,6 @@
-using System.Collections.Generic;
-using System.Linq;
-using Hextasy.Framework;
-using ThirtyRails.Utils;
+using ThirtyRails.Screens.Game.GameBoard;
 
-namespace ThirtyRails.Screens.Game.GameBoard
+namespace ThirtyRails.Logic
 {
     public class GameLogic : IHasState
     {

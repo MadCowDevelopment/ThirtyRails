@@ -8,6 +8,7 @@
 
         public bool IsMountain { get; set; }
 
+
         public bool IsMine { get; set; }
 
     }

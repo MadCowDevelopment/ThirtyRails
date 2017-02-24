@@ -14,7 +14,7 @@ namespace ThirtyRails.Screens.Game.GameBoard
         {
             _tiles = new List<Tile>();
 
-            int id = 0;
+            int id;
             for (id = 0; id < 8; id++)
             {
                 _tiles.Add(new BorderTile(id));

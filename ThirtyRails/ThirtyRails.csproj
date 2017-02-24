@@ -84,20 +84,20 @@
     <Compile Include="Controls\TileControl.xaml.cs">
       <DependentUpon>TileControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Game\GameBoard\BorderTile.cs" />
+    <Compile Include="Logic\BorderTile.cs" />
     <Compile Include="Screens\Game\GameBoard\GameBoardView.xaml.cs">
       <DependentUpon>GameBoardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Screens\Game\GameBoard\GameBoardViewModel.cs" />
-    <Compile Include="Screens\Game\GameBoard\GameLogic.cs" />
-    <Compile Include="Screens\Game\GameBoard\GameState.cs" />
-    <Compile Include="Screens\Game\GameBoard\IHasState.cs" />
-    <Compile Include="Screens\Game\GameBoard\Map.cs" />
-    <Compile Include="Screens\Game\GameBoard\PlaceMineState.cs" />
-    <Compile Include="Screens\Game\GameBoard\PlaceStationsState.cs" />
-    <Compile Include="Screens\Game\GameBoard\Point.cs" />
-    <Compile Include="Screens\Game\GameBoard\CenterTile.cs" />
-    <Compile Include="Screens\Game\GameBoard\Tile.cs" />
+    <Compile Include="Logic\GameLogic.cs" />
+    <Compile Include="Logic\GameState.cs" />
+    <Compile Include="Logic\IHasState.cs" />
+    <Compile Include="Logic\Map.cs" />
+    <Compile Include="Logic\PlaceMineState.cs" />
+    <Compile Include="Logic\PlaceStationsState.cs" />
+    <Compile Include="Logic\Point.cs" />
+    <Compile Include="Logic\CenterTile.cs" />
+    <Compile Include="Logic\Tile.cs" />
     <Compile Include="Services\RNG.cs" />
     <Compile Include="Utils\ListExtensions.cs" />
     <Compile Include="Utils\ObjectExtensions.cs" />
@@ -189,6 +189,7 @@
   <ItemGroup>
     <Resource Include="Images\mine.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.1.29.2\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.2\build\dotnet\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
