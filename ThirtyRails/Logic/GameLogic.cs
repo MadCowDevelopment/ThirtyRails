@@ -1,12 +1,10 @@
-using ThirtyRails.Screens.Game.GameBoard;
-
 namespace ThirtyRails.Logic
 {
     public class GameLogic : IHasState
     {
         private readonly Map _map;
 
-        private GameState _currentState;
+        private IGameState _currentState;
 
         public GameLogic(Map map)
         {
@@ -34,9 +32,9 @@ namespace ThirtyRails.Logic
             _currentState.Leave(tile);
         }
 
-        public GameState State => _currentState;
+        public IGameState State => _currentState;
 
-        public void ChangeState(GameState state)
+        public void ChangeState(IGameState state)
         {
             _currentState = state;
         }

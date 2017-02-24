@@ -1,4 +1,4 @@
-﻿namespace ThirtyRails.Screens.Game.GameBoard
+﻿namespace ThirtyRails.Logic
 {
     public class BorderTile : Tile
     {

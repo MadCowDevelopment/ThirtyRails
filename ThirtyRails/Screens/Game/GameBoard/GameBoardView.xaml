@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:controls="clr-namespace:ThirtyRails.Controls"
-             xmlns:cal="http://www.caliburnproject.org"
-             xmlns:gameBoard="clr-namespace:ThirtyRails.Screens.Game.GameBoard"
+             xmlns:logic="clr-namespace:ThirtyRails.Logic"
              mc:Ignorable="d"
              Width="320" Height="320"
              d:DesignHeight="600" d:DesignWidth="600">
@@ -65,10 +64,10 @@
     <ItemsControl Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="8" ItemsSource="{Binding Tiles}">
       <ItemsControl.Resources>
 
-        <DataTemplate DataType="{x:Type gameBoard:BorderTile}">
+        <DataTemplate DataType="{x:Type logic:BorderTile}">
           <controls:TileControl Background="LightGray"/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type gameBoard:CenterTile}">
+        <DataTemplate DataType="{x:Type logic:CenterTile}">
           <controls:TileControl Background="WhiteSmoke">
             <Grid>
               <Image Source="pack://application:,,,/ThirtyRails;component/Images/mountain.png" Visibility="{Binding IsMountain, Converter={StaticResource BooleanToVisibilityConverter}}"/>

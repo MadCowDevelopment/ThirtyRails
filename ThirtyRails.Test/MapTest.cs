@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ThirtyRails.Logic;
 using ThirtyRails.Screens.Game.GameBoard;
 using Xunit;
 

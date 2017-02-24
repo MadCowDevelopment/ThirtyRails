@@ -1,8 +1,8 @@
-namespace ThirtyRails.Screens.Game.GameBoard
+namespace ThirtyRails.Logic
 {
     public interface IHasState
     {
-        GameState State { get; }
-        void ChangeState(GameState state);
+        IGameState State { get; }
+        void ChangeState(IGameState state);
     }
 }

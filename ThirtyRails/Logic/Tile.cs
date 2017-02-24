@@ -1,6 +1,6 @@
 ﻿using Caliburn.Micro;
 
-namespace ThirtyRails.Screens.Game.GameBoard
+namespace ThirtyRails.Logic
 {
     public abstract class Tile : PropertyChangedBase
     {

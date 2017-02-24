@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:cal="http://www.caliburnproject.org"
              xmlns:gameBoard="clr-namespace:ThirtyRails.Screens.Game.GameBoard"
+             xmlns:logic="clr-namespace:ThirtyRails.Logic"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance gameBoard:Tile}">
+             d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance logic:Tile}">
   <UserControl.Template>
     <ControlTemplate TargetType="UserControl">
       <Button FocusVisualStyle="{x:Null}" Focusable="False"

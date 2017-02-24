@@ -4,7 +4,7 @@ using Caliburn.Micro;
 using Hextasy.Framework;
 using ThirtyRails.Utils;
 
-namespace ThirtyRails.Screens.Game.GameBoard
+namespace ThirtyRails.Logic
 {
     public class Map : PropertyChangedBase
     {
@@ -41,6 +41,7 @@ namespace ThirtyRails.Screens.Game.GameBoard
         public IEnumerable<Tile> Tiles => _tiles;
 
         public IEnumerable<CenterTile> CenterTiles => _tiles.OfType<CenterTile>();
+        public IEnumerable<BorderTile> BorderTiles => _tiles.OfType<BorderTile>();
 
         public List<Tile> GetAdjacentTiles(Tile tile)
         {

@@ -1,9 +1,9 @@
 using System.Linq;
 using ThirtyRails.Utils;
 
-namespace ThirtyRails.Screens.Game.GameBoard
+namespace ThirtyRails.Logic
 {
-    public class PlaceMineState : GameState
+    public class PlaceMineState : GameState<CenterTile>
     {
         public PlaceMineState(IHasState gameLogic, Map map) : base(gameLogic, map)
         {
@@ -15,7 +15,7 @@ namespace ThirtyRails.Screens.Game.GameBoard
                 .ForEach(p => p.IsValidTarget = true);
         }
 
-        protected override void OnClick(Tile tile)
+        protected override void OnClick(CenterTile tile)
         {
             if (!tile.IsValidTarget) return;
 
@@ -29,20 +29,14 @@ namespace ThirtyRails.Screens.Game.GameBoard
             State.ChangeState(new PlaceStationsState(State, Map));
         }
 
-        protected override void OnEnter(Tile tile)
+        protected override void OnEnter(CenterTile tile)
         {
-            var centerTile = tile as CenterTile;
-            if (centerTile == null) return;
-
-            if (centerTile.IsValidTarget) centerTile.IsMine = true;
+            if (tile.IsValidTarget) tile.IsMine = true;
         }
 
-        protected override void OnLeave(Tile tile)
+        protected override void OnLeave(CenterTile tile)
         {
-            var centerTile = tile as CenterTile;
-            if (centerTile == null) return;
-
-            centerTile.IsMine = false;
+            tile.IsMine = false;
         }
     }
 }

@@ -1,6 +1,6 @@
-namespace ThirtyRails.Screens.Game.GameBoard
+namespace ThirtyRails.Logic
 {
-    public abstract class GameState
+    public abstract class GameState<T> : IGameState where T : Tile
     {
         protected IHasState State { get; }
         protected Map Map { get; }
@@ -13,25 +13,31 @@ namespace ThirtyRails.Screens.Game.GameBoard
 
         public void Click(Tile tile)
         {
-            OnClick(tile);
+            var specificTile = tile as T;
+            if (specificTile == null) return;
+            OnClick(specificTile);
         }
 
-        protected abstract void OnClick(Tile tile);
+        protected abstract void OnClick(T tile);
 
         public void Enter(Tile tile)
         {
             tile.IsMouseOver = true;
-            OnEnter(tile);
+            var specificTile = tile as T;
+            if (specificTile == null) return;
+            OnEnter(specificTile);
         }
 
-        protected abstract void OnEnter(Tile tile);
+        protected abstract void OnEnter(T tile);
 
         public void Leave(Tile tile)
         {
             tile.IsMouseOver = false;
-            OnLeave(tile);
+            var specificTile = tile as T;
+            if (specificTile == null) return;
+            OnLeave(specificTile);
         }
 
-        protected abstract void OnLeave(Tile tile);
+        protected abstract void OnLeave(T tile);
     }
 }
