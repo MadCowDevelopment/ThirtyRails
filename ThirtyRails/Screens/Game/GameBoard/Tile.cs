@@ -2,22 +2,24 @@
 
 namespace ThirtyRails.Screens.Game.GameBoard
 {
-    public class Tile : PropertyChangedBase
+    public abstract class Tile : PropertyChangedBase
     {
-        public Tile(int id)
+        protected Tile(int id)
         {
-            X = id % 6;
-            Y = id / 6;
+            X = id % 8;
+            Y = id / 8;
         }
 
         public int Y { get; set; }
 
         public int X { get; set; }
-
-        public bool IsMountain { get; set; }
-
-        public bool IsValidTarget { get; set; }
-        public bool IsMine { get; set; }
         public bool IsMouseOver { get; set; }
+        public bool CanHighlight { get; set; }
+        public bool IsValidTarget { get; set; }
+
+        public override string ToString()
+        {
+            return $"[{X};{Y}] - {GetType()}";
+        }
     }
 }

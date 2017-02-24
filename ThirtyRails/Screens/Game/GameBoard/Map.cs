@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Caliburn.Micro;
+using Hextasy.Framework;
 using ThirtyRails.Utils;
 
 namespace ThirtyRails.Screens.Game.GameBoard
@@ -12,13 +13,34 @@ namespace ThirtyRails.Screens.Game.GameBoard
         public Map()
         {
             _tiles = new List<Tile>();
-            for (int i = 0; i < 36; i++)
+
+            int id = 0;
+            for (id = 0; id < 8; id++)
             {
-                _tiles.Add(new Tile(i));
+                _tiles.Add(new BorderTile(id));
+            }
+            
+            for (id = 8; id < 56; id++)
+            {
+                if (id % 8 == 0 || id % 8 == 7) _tiles.Add(new BorderTile(id));
+                else _tiles.Add(new CenterTile(id));
+            }
+
+            for (id = 56; id < 64; id++)
+            {
+                _tiles.Add(new BorderTile(id));
+            }
+
+            for (var y = 0; y < 6; y++)
+            {
+                var tile = GetCenterTile(RNG.Next(0, 5), y);
+                tile.IsMountain = true;
             }
         }
 
         public IEnumerable<Tile> Tiles => _tiles;
+
+        public IEnumerable<CenterTile> CenterTiles => _tiles.OfType<CenterTile>();
 
         public List<Tile> GetAdjacentTiles(Tile tile)
         {
@@ -39,6 +61,11 @@ namespace ThirtyRails.Screens.Game.GameBoard
         public int IndexOf(Tile tile)
         {
             return _tiles.IndexOf(tile);
+        }
+
+        public CenterTile GetCenterTile(int x, int y)
+        {
+            return GetTile(x + 1, y + 1) as CenterTile;
         }
     }
 }

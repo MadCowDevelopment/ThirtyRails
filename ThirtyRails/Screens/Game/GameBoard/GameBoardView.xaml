@@ -62,79 +62,26 @@
     <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="6" Grid.Column="9" Pips="5"/>
     <controls:Die DieColor="WhiteSmoke" PipColor="Black" Grid.Row="7" Grid.Column="9" Pips="6"/>
 
-    <controls:Station Grid.Row="1" Grid.Column="2" />
-    <controls:Station Grid.Row="1" Grid.Column="3" />
-    <controls:Station Grid.Row="1" Grid.Column="4" />
-    <controls:Station Grid.Row="1" Grid.Column="5" />
-    <controls:Station Grid.Row="1" Grid.Column="6" />
-    <controls:Station Grid.Row="1" Grid.Column="7" />
+    <ItemsControl Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="8" ItemsSource="{Binding Tiles}">
+      <ItemsControl.Resources>
 
-    <controls:Station Grid.Row="8" Grid.Column="2" />
-    <controls:Station Grid.Row="8" Grid.Column="3" />
-    <controls:Station Grid.Row="8" Grid.Column="4" />
-    <controls:Station Grid.Row="8" Grid.Column="5" />
-    <controls:Station Grid.Row="8" Grid.Column="6" />
-    <controls:Station Grid.Row="8" Grid.Column="7" />
-
-    <controls:Station Grid.Row="2" Grid.Column="1" />
-    <controls:Station Grid.Row="3" Grid.Column="1" />
-    <controls:Station Grid.Row="4" Grid.Column="1" />
-    <controls:Station Grid.Row="5" Grid.Column="1" />
-    <controls:Station Grid.Row="6" Grid.Column="1" />
-    <controls:Station Grid.Row="7" Grid.Column="1" />
-
-    <controls:Station Grid.Row="2" Grid.Column="8" />
-    <controls:Station Grid.Row="3" Grid.Column="8" />
-    <controls:Station Grid.Row="4" Grid.Column="8" />
-    <controls:Station Grid.Row="5" Grid.Column="8" />
-    <controls:Station Grid.Row="6" Grid.Column="8" />
-    <controls:Station Grid.Row="7" Grid.Column="8" />
-
-    <ItemsControl Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="6" Grid.RowSpan="6" ItemsSource="{Binding Tiles}">
+        <DataTemplate DataType="{x:Type gameBoard:BorderTile}">
+          <controls:TileControl Background="LightGray"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type gameBoard:CenterTile}">
+          <controls:TileControl Background="WhiteSmoke">
+            <Grid>
+              <Image Source="pack://application:,,,/ThirtyRails;component/Images/mountain.png" Visibility="{Binding IsMountain, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+              <Image Source="pack://application:,,,/ThirtyRails;component/Images/mine.png" Visibility="{Binding IsMine, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            </Grid>
+          </controls:TileControl>
+        </DataTemplate>
+      </ItemsControl.Resources>
       <ItemsControl.ItemsPanel>
         <ItemsPanelTemplate>
-          <UniformGrid Columns="6" Rows="6"/>
+          <UniformGrid Columns="8" Rows="8"/>
         </ItemsPanelTemplate>
       </ItemsControl.ItemsPanel>
-      <ItemsControl.ItemTemplate>
-        <DataTemplate DataType="{x:Type gameBoard:Tile}">
-          <Button FocusVisualStyle="{x:Null}" Focusable="False"
-                  cal:Message.Attach="[Event Click] = [Action OnTileClick($dataContext)];[Event MouseEnter] = [Action OnTileEnter($dataContext)];[Event MouseLeave] = [Action OnTileLeave($dataContext)]">
-            <Button.Template>
-              <ControlTemplate>
-                <Border>
-                  <Border.Style>
-                    <Style TargetType="Border">
-                      <Setter Property="Background" Value="WhiteSmoke"/>
-                      <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsValidTarget}" Value="True">
-                          <Setter Property="Background" Value="LightGreen"/>
-                        </DataTrigger>
-                      </Style.Triggers>
-                    </Style>
-                  </Border.Style>
-                  <Grid Opacity="1">
-                    <Border Opacity="0.8" x:Name="MouseOverlay">
-                      <Border.Style>
-                        <Style TargetType="Border">
-                          <Setter Property="Background" Value="Transparent"/>
-                          <Style.Triggers>
-                            <DataTrigger Binding="{Binding IsMouseOver}" Value="True">
-                              <Setter Property="Background" Value="White"/>
-                            </DataTrigger>
-                          </Style.Triggers>
-                        </Style>
-                      </Border.Style>
-                    </Border>
-                    <Image Source="pack://application:,,,/ThirtyRails;component/Images/mountain.png" Visibility="{Binding IsMountain, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                    <Image Source="pack://application:,,,/ThirtyRails;component/Images/mine.png" Visibility="{Binding IsMine, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-                  </Grid>
-                </Border>
-              </ControlTemplate>
-            </Button.Template>
-          </Button>
-        </DataTemplate>
-      </ItemsControl.ItemTemplate>
     </ItemsControl>
   </Grid>
 </UserControl>

@@ -19,17 +19,7 @@ namespace ThirtyRails.Screens.Game.GameBoard
         }
 
         public void Initialize()
-        {
-            var adjacentTiles = new List<Tile>();
-
-            for (var y = 0; y < 6; y++)
-            {
-                var tile = _map.GetTile(RNG.Next(0, 5), y);
-                tile.IsMountain = true;
-                adjacentTiles.AddRangeDistinct(_map.GetAdjacentTiles(tile));
-            }
-
-            adjacentTiles.Where(p => !p.IsMountain).ForEach(p => p.IsValidTarget = true);
+        { 
         }
 
         public void ClickTile(Tile tile)

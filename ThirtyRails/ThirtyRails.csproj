@@ -81,9 +81,10 @@
     <Compile Include="Controls\Die.xaml.cs">
       <DependentUpon>Die.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Station.xaml.cs">
-      <DependentUpon>Station.xaml</DependentUpon>
+    <Compile Include="Controls\TileControl.xaml.cs">
+      <DependentUpon>TileControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Game\GameBoard\BorderTile.cs" />
     <Compile Include="Screens\Game\GameBoard\GameBoardView.xaml.cs">
       <DependentUpon>GameBoardView.xaml</DependentUpon>
     </Compile>
@@ -95,6 +96,7 @@
     <Compile Include="Screens\Game\GameBoard\PlaceMineState.cs" />
     <Compile Include="Screens\Game\GameBoard\PlaceStationsState.cs" />
     <Compile Include="Screens\Game\GameBoard\Point.cs" />
+    <Compile Include="Screens\Game\GameBoard\CenterTile.cs" />
     <Compile Include="Screens\Game\GameBoard\Tile.cs" />
     <Compile Include="Services\RNG.cs" />
     <Compile Include="Utils\ListExtensions.cs" />
@@ -105,7 +107,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\Station.xaml">
+    <Page Include="Controls\TileControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

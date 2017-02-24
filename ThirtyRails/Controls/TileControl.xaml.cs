@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ThirtyRails.Controls
 {
     /// <summary>
-    /// Interaction logic for Station.xaml
+    /// Interaction logic for Tile.xaml
     /// </summary>
-    public partial class Station : UserControl
+    public partial class TileControl : UserControl
     {
-        public Station()
+        public TileControl()
         {
             InitializeComponent();
         }
